@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
+import './card.css'
 
 class Card extends Component {
   render() {
     return (
       <>
-        <h1>This is a card</h1>
+        {
+          this.props.pictures.map(picture => {
+            return (
+              <div className='card' onClick={this.props.handleClick}>
+                <h1>{picture}</h1>
+              </div>
+            )
+          })
+        }
       </>
     )
   }
