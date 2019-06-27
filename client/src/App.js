@@ -49,13 +49,19 @@ class App extends Component {
       let beenClicked = this.state.hasBeenClicked
       beenClicked.push(parseInt(e.target.id))
       this.setState({ hasBeenClicked: beenClicked })
-      // increment score (separate function?)
       let score = this.state.currentScore
       score += 1
       this.setState({ currentScore: score })
+      // shuffle the picture array
     } else if ((this.state.hasBeenClicked.indexOf(parseInt(e.target.id)) >= 0) && (this.state.cardNumbers.indexOf(parseInt(e.target.id)) >= 0)) {
-      // reset hasBeenClicked, stop score increment, set highest score (separate func?)
-      this.setState({ hasBeenClicked: [ ] })
+      // set highest score (separate func?)
+      if (this.state.currentScore > this.state.topScore) {
+        // if current is higher, set top to current
+        let newCurrentScore = this.state.currentScore
+        this.setState({ topScore: newCurrentScore })
+      }
+      this.setState({ hasBeenClicked: [ ], currentScore: 0 })
+      // shuffle the picture array
     }
   }
 
