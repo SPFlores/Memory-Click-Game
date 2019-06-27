@@ -45,19 +45,15 @@ class App extends Component {
   }
 
   handleClick = e => {
-    // check if the id is in this.state.hasBeenClicked
     if ((this.state.cardNumbers.indexOf(parseInt(e.target.id)) >= 0) && (this.state.hasBeenClicked.indexOf(parseInt(e.target.id)) < 0)) {
-      // if it isn't
       let beenClicked = this.state.hasBeenClicked
       beenClicked.push(parseInt(e.target.id))
       this.setState({ hasBeenClicked: beenClicked })
-      console.log(this.state.hasBeenClicked)
       // increment score (separate function?)
     } else if ((this.state.hasBeenClicked.indexOf(parseInt(e.target.id)) >= 0) && (this.state.cardNumbers.indexOf(parseInt(e.target.id)) >= 0)) {
-      console.log('wrong')
+      // reset hasBeenClicked, stop score increment, set highest score (separate func?)
+      this.setState({ hasBeenClicked: [ ] })
     }
-    // if it is
-    // reset hasBeenClicked, stop score increment, set highest score (separate func?)
   }
 
   render() {
