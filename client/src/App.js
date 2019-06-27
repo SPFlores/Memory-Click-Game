@@ -52,16 +52,30 @@ class App extends Component {
       let score = this.state.currentScore
       score += 1
       this.setState({ currentScore: score })
-      // shuffle the picture array
+
+      let newPicturesArr = this.state.pictures
+      for (let i = (newPicturesArr.length - 1); i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1))
+        let x = newPicturesArr[i]
+        newPicturesArr[i] = newPicturesArr[j]
+        newPicturesArr[j] = x
+      }
+      this.setState({ pictures: newPicturesArr })
     } else if ((this.state.hasBeenClicked.indexOf(parseInt(e.target.id)) >= 0) && (this.state.cardNumbers.indexOf(parseInt(e.target.id)) >= 0)) {
-      // set highest score (separate func?)
       if (this.state.currentScore > this.state.topScore) {
-        // if current is higher, set top to current
         let newCurrentScore = this.state.currentScore
         this.setState({ topScore: newCurrentScore })
       }
       this.setState({ hasBeenClicked: [ ], currentScore: 0 })
-      // shuffle the picture array
+
+      let newPicturesArr = this.state.pictures
+      for (let i = (newPicturesArr.length - 1); i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1))
+        let x = newPicturesArr[i]
+        newPicturesArr[i] = newPicturesArr[j]
+        newPicturesArr[j] = x
+      }
+      this.setState({ pictures: newPicturesArr })
     }
   }
 
