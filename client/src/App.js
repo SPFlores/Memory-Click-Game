@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import Nav from './Components/Nav'
 import Card from './Components/Card'
+import Grid from '@material-ui/core/Grid'
 
 class App extends Component {
   state = {
@@ -84,7 +85,9 @@ class App extends Component {
       <>
         <Nav currentScore={this.state.currentScore} topScore={this.state.topScore} />
         <p>Something here about what you should do for the game.</p>
-        <Card handleClick={this.handleClick} pictures={this.state.pictures} />
+        <Grid container>
+            <Card handleClick={this.handleClick} pictures={this.state.pictures} />
+        </Grid >
         {/* find the randomize function on the NSTAAF HW */}
       </>
     )
