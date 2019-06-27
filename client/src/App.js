@@ -50,6 +50,9 @@ class App extends Component {
       beenClicked.push(parseInt(e.target.id))
       this.setState({ hasBeenClicked: beenClicked })
       // increment score (separate function?)
+      let score = this.state.currentScore
+      score += 1
+      this.setState({ currentScore: score })
     } else if ((this.state.hasBeenClicked.indexOf(parseInt(e.target.id)) >= 0) && (this.state.cardNumbers.indexOf(parseInt(e.target.id)) >= 0)) {
       // reset hasBeenClicked, stop score increment, set highest score (separate func?)
       this.setState({ hasBeenClicked: [ ] })
