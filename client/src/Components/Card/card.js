@@ -9,9 +9,9 @@ class Card extends Component {
         {
           this.props.pictures.map(picture => {
             return (
-              <Grid item xs={6} sm={4} m={4} l={4} xl={4} >
-                <div className='card' onClick={this.props.handleClick} key={picture.number} id={picture.number} >
-                  <img src={picture.link} alt={picture.number} class='image' id={picture.number} />
+              <Grid item xs={6} sm={4} m={4} l={4} xl={4} key={picture.number}>
+                <div className='card' onClick={this.props.handleClick} id={picture.number} >
+                  <img src={picture.link} alt={picture.number} className='image' id={picture.number} />
                 </div>
               </Grid >
             )
