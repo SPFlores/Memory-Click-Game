@@ -3,7 +3,7 @@ import './card.css'
 import Grid from '@material-ui/core/Grid'
 
 class Card extends Component {
-  render() {
+  render () {
     return (
       <>
         {
