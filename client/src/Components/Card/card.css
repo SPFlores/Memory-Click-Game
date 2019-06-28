@@ -1,6 +1,14 @@
 .card {
+  height: 160px;
+  width: 160px;
+  background: yellow;
+  margin: 10px;
+  padding: 5px
+}
+
+.image {
   height: 150px;
   width: 150px;
-  background: gray;
-  margin: 10px
+  margin: 5px;
+  background: white
 }

@@ -3,6 +3,15 @@ import './App.css'
 import Nav from './Components/Nav'
 import Card from './Components/Card'
 import Grid from '@material-ui/core/Grid'
+import Alfred from './Images/alfred.jpg'
+import Babs from './Images/barbara.jpg'
+import Cass from './Images/cassandra.jpg'
+import Dami from './Images/dami.png'
+import Dick from './Images/nightwing.jpg'
+import Jason from './Images/redhood.jpg'
+import Tim from './Images/redrobin.jpg'
+import Bruce from './Images/batman.png'
+import Steph from './Images/stephanie.jpg'
 
 class App extends Component {
   state = {
@@ -11,38 +20,35 @@ class App extends Component {
     pictures: [
       {
         number: 1,
-        link: 'something 1'
+        link: Alfred
       }, {
         number: 2,
-        link: 'something 2'
+        link: Babs
       }, {
         number: 3,
-        link: 'something 3'
+        link: Cass
       }, {
         number: 4,
-        link: 'something 4'
+        link: Dami
       }, {
         number: 5,
-        link: 'something 5'
+        link: Dick
       }, {
         number: 6,
-        link: 'something 6'
+        link: Jason
       }, {
         number: 7,
-        link: 'something 7'
+        link: Tim
       }, {
         number: 8,
-        link: 'something 8'
+        link: Bruce
       }, {
         number: 9,
-        link: 'something 9'
-      }, {
-        number: 10,
-        link: 'something 10'
+        link: Steph
       }
     ],
     hasBeenClicked: [],
-    cardNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    cardNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
   }
 
   handleClick = e => {
@@ -67,7 +73,7 @@ class App extends Component {
         let newCurrentScore = this.state.currentScore
         this.setState({ topScore: newCurrentScore })
       }
-      this.setState({ hasBeenClicked: [ ], currentScore: 0 })
+      this.setState({ hasBeenClicked: [], currentScore: 0 })
 
       let newPicturesArr = this.state.pictures
       for (let i = (newPicturesArr.length - 1); i > 0; i--) {
@@ -86,7 +92,7 @@ class App extends Component {
         <Nav currentScore={this.state.currentScore} topScore={this.state.topScore} />
         <p>Something here about what you should do for the game.</p>
         <Grid container>
-            <Card handleClick={this.handleClick} pictures={this.state.pictures} />
+          <Card handleClick={this.handleClick} pictures={this.state.pictures} />
         </Grid >
         {/* find the randomize function on the NSTAAF HW */}
       </>
